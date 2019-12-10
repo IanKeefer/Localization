@@ -1,0 +1,9 @@
+﻿@using LocalizationPOC.Models
+@model Localization
+
+<div class="jumbotron">
+    <h1>ASP.NET Localization</h1>
+    @Html.LabelFor(x => x.Sentence)
+    @Html.EditorFor(x => x.Sentence)
+    @*<p class="lead">@Html.DisplayNameFor(x => x.Sentence)</p>*@
+</div>
