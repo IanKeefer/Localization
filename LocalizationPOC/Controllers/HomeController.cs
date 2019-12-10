@@ -12,29 +12,26 @@ namespace LocalizationPOC.Controllers
 
         public ActionResult Index()
         {
-            var model = new Models.Localization();
-            return View(model);
+            return View(new Models.Localization());
         }
 
-        public ActionResult SetCulture(int id)
+        public ActionResult SetCulture(string set)
         {
-            Culture culture = Culture.GERMAN;
-            CultureState.Culture = culture;
+            ChangeCulture(set);
             return Redirect(Request.UrlReferrer.ToString());
         }
 
-        public ActionResult About()
+        private void ChangeCulture(string lang)
         {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
+            Response.Cookies.Remove("Language");
+            HttpCookie languageCookie = System.Web.HttpContext.Current.Request.Cookies["Language"];
+            if (languageCookie == null)
+            {
+                languageCookie = new HttpCookie("Language");
+            }
+            languageCookie.Value = lang;
+            languageCookie.Expires = DateTime.Now.AddDays(30); // arbirary, no expiration?
+            Response.SetCookie(languageCookie);
         }
     }
 }

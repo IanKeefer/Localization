@@ -26,7 +26,7 @@ namespace LocalizationPOC.Localization
         {
             foreach (Culture culture in Enum.GetValues(typeof(Culture)))
             {
-                string cultureName = current.GetType().GetFields(BindingFlags.Static | BindingFlags.Public).Select(x => x.Name).SingleOrDefault();
+                string cultureName = culture.GetShortName();
                 if (cultureName == current)
                 {
                     return culture;

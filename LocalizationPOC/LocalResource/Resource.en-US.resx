@@ -117,8 +117,12 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Alert" xml:space="preserve">
+    <value>This is an alert message</value>
+    <comment>alert</comment>
+  </data>
   <data name="Sentence" xml:space="preserve">
     <value>The quick brown fox jumps over the lazy dog</value>
-    <comment>Test sentence</comment>
+    <comment>test</comment>
   </data>
 </root>

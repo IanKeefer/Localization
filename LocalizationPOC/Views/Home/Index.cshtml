@@ -3,7 +3,13 @@
 
 <div class="jumbotron">
     <h1>ASP.NET Localization</h1>
-    @Html.LabelFor(x => x.Sentence)
-    @Html.EditorFor(x => x.Sentence)
-    @*<p class="lead">@Html.DisplayNameFor(x => x.Sentence)</p>*@
+    <p class="lead">@Html.DisplayNameFor(x => x.Sentence)</p>
 </div>
+
+<button onclick="Alert()">Javascript Function</button>
+@Html.Action("Index", "Resources")
+<script>
+    function Alert() {
+        alert(Resources.Alert);
+    }
+</script>
